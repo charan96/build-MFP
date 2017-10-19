@@ -51,18 +51,6 @@ refFile = paste0('refidx_', id, '.csv')
 # read corresponding anomaly reference indices in ground truth explanation
 refIdx = read.csv(paste0(refidxDir, refFile))
 
-"HRnkIdx <- read.csv(paste0(HRnkDir, 'HRankBenchIdx.csv'))
-HRnkIdx <- HRnkIdx[which(HRnkIdx$benchId == id), ]
-benchAnoId <- rep(0, nrow(HRnkIdx))
-motherAnoId <- rep(0, nrow(HRnkIdx))
-c <- 1
-for(hidx in HRnkIdx$anoIdx){
-  t <- which(refIdx$anoIdx == hidx)
-  benchAnoId[c] <- t
-  motherAnoId[c] <- which(anIndx == refIdx$refIdx[t])
-  c <- c + 1
-}"
-
 benchAnoId <- rep(0, nrow(refIdx))
 motherAnoId <- rep(0, nrow(refIdx))
 
